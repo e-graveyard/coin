@@ -9,8 +9,8 @@ targets:
     main: src/main.cr
 
 dependencies:
-  admiral:
-    github: jwaldrip/admiral.cr
+  optarg:
+    github: mosop/optarg
 
 crystal: 0.27.2
 
