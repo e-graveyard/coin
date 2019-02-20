@@ -1,1 +1,1 @@
-COIN: Terminal-based foreign currency converter
+# COIN: Terminal-based foreign currency converter
