@@ -62,7 +62,7 @@ class Parser
     end
 
     private def show_usage
-        "#{bold("usage: coin [-h] [-v] amount origin <target, ...>")}"
+        "#{bold("Usage: coin [-h] [-v] amount origin <target, ...>")}"
     end
 
     private def show_help
