@@ -25,6 +25,8 @@ class Parser
     end
 
     def run
+        die("missing operand.") if @argv.size == 0
+
         if @argv.size == 1
             parse_and_perform_optional_args
             exit TERMINATION_SUCCESS
