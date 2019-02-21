@@ -1,8 +1,5 @@
 require "optarg"
-require "colorize"
-
-TERMINATION_ERROR   = 1
-TERMINATION_SUCCESS = 0
+require "./dialog"
 
 class OptionalArgumentsModel < Optarg::Model
     bool "-h"
@@ -25,11 +22,11 @@ class Parser
     end
 
     def run
-        die("missing operand.") if @argv.size == 0
+        Dialog.missing_operand if @argv.size == 0
 
         if @argv.size == 1
             parse_and_perform_optional_args
-            exit TERMINATION_SUCCESS
+            exit 0
         end
 
         return parse_positional
@@ -41,10 +38,10 @@ class Parser
         begin
             opt = OptionalArgumentsModel.parse(@argv)
             if opt.h? || opt.help?
-                show_help
+                Dialog.help
 
             elsif opt.v? || opt.version?
-                show_version
+                Dialog.version
 
             else
                 error = true
@@ -54,7 +51,7 @@ class Parser
             error = true
         end
 
-        die("unknown option.") if error
+        Dialog.unknown_option if error
     end
 
     private def parse_positional
@@ -63,7 +60,7 @@ class Parser
             pos = PositionalArgumentsModel.parse(@argv)
 
         rescue Optarg::UnknownOption
-            die("unknown option.")
+            Dialog.unknown_option
         end
 
         # ensures that the first argument is a float number.
@@ -72,16 +69,16 @@ class Parser
             amountd = amountd * 100
 
         rescue ArgumentError
-            die("value \"#{pos.amount}\" is not a decimal number.")
+            Dialog.not_decimal(pos.amount)
         end
 
         if amountd == 0
-            die("cannot convert zero.")
+            Dialog.zero_value
         end
 
         # Ensures that at least one target currency is defined
         if pos.targets.size == 0
-            die("at least one target currency is required for convertion.")
+            Dialog.no_target
         end
 
         return {
@@ -89,69 +86,5 @@ class Parser
             "origin"  => pos.origin,
             "targets" => pos.targets
         }
-    end
-
-    private def show_usage
-        "#{bold("Usage: coin [-h] [-v] amount origin <target, ...>")}"
-    end
-
-    private def show_help
-        usage = <<-EOP
-        #{show_usage}
-
-        Positional arguments:
-            #{blue("amount")}             The amount of money to be converted
-            #{blue("origin")}             The origin currency used as base for conversion
-            #{blue("target")}             Each of the target currencies for conversion
-
-        Optional arguments:
-            #{blue("-h, --help")}         Show this help message and exit
-            #{blue("-v, --version")}      Show the program version and exit
-
-        Examples:
-            $ #{green("coin 1 usd brl")}
-            # => converts 1 us dollar to brazilian real
-
-            $ #{green("coin 2.5 eur rub jpy")}
-            # => converts 2.5 euro to russian rouble and japanese yen
-
-        This is free and open source software (FOSS).
-        Licensed under the MIT license.
-
-        #{bold("Project page: <github.com/caian-org/coin>")}
-        EOP
-
-        puts usage
-    end
-
-    private def show_version
-        puts "coin v0.1.0"
-    end
-
-    private def bold(txt)
-        txt.colorize.mode(:bold)
-    end
-
-    private def blue(txt)
-        txt.colorize(:light_blue)
-    end
-
-    private def green(txt)
-        txt.colorize(:light_green)
-    end
-
-    private def green(txt)
-        txt.colorize(:light_green)
-    end
-
-    private def die(txt)
-        msg = <<-EOP
-        #{"Error:".colorize(:light_red)} #{txt}
-
-        #{show_usage}
-        EOP
-
-        puts msg
-        exit TERMINATION_ERROR
     end
 end
