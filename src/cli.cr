@@ -14,77 +14,79 @@ class PositionalArgumentsModel < Optarg::Model
     arg_array "targets"
 end
 
-class Parser
-    @argv = [] of String
+module CLI
+    class Parser
+        @argv = [] of String
 
-    def initialize(argv)
-        @argv = argv
-    end
-
-    def run
-        Dialog.missing_operand if @argv.size == 0
-
-        if @argv.size == 1
-            parse_and_perform_optional_args
-            exit 0
+        def initialize(argv)
+            @argv = argv
         end
 
-        return parse_positional
-    end
+        private def parse_and_perform_optional_args
+            error = false
 
-    private def parse_and_perform_optional_args
-        error = false
+            begin
+                opt = OptionalArgumentsModel.parse(@argv)
+                if opt.h? || opt.help?
+                    Dialog::CLI.help
 
-        begin
-            opt = OptionalArgumentsModel.parse(@argv)
-            if opt.h? || opt.help?
-                Dialog.help
+                elsif opt.v? || opt.version?
+                    Dialog::CLI.version
 
-            elsif opt.v? || opt.version?
-                Dialog.version
+                else
+                    error = true
+                end
 
-            else
+            rescue Optarg::UnknownOption
                 error = true
             end
 
-        rescue Optarg::UnknownOption
-            error = true
+            Dialog::CLI.unknown_option if error
         end
 
-        Dialog.unknown_option if error
-    end
+        private def parse_positional
+            # ensures that no flag will be passed
+            begin
+                pos = PositionalArgumentsModel.parse(@argv)
 
-    private def parse_positional
-        # ensures that no flag will be passed
-        begin
-            pos = PositionalArgumentsModel.parse(@argv)
+            rescue Optarg::UnknownOption
+                Dialog::CLI.unknown_option
+            end
 
-        rescue Optarg::UnknownOption
-            Dialog.unknown_option
+            # ensures that the first argument is a float number.
+            begin
+                amountd = pos.amount.to_f
+                amountd = amountd * 100
+
+            rescue ArgumentError
+                Dialog::CLI.not_decimal(pos.amount)
+            end
+
+            if amountd == 0
+                Dialog::CLI.zero_value
+            end
+
+            # Ensures that at least one target currency is defined
+            if pos.targets.size == 0
+                Dialog::CLI.no_target
+            end
+
+            return {
+                "amount"  => amountd,
+                "origin"  => pos.origin,
+                "targets" => pos.targets
+            }
         end
 
-        # ensures that the first argument is a float number.
-        begin
-            amountd = pos.amount.to_f
-            amountd = amountd * 100
+        def act
+            Dialog::CLI.missing_operand if @argv.size == 0
 
-        rescue ArgumentError
-            Dialog.not_decimal(pos.amount)
+            if @argv.size == 1
+                parse_and_perform_optional_args
+                exit 0
+            end
+
+            return parse_positional
         end
-
-        if amountd == 0
-            Dialog.zero_value
-        end
-
-        # Ensures that at least one target currency is defined
-        if pos.targets.size == 0
-            Dialog.no_target
-        end
-
-        return {
-            "amount"  => amountd,
-            "origin"  => pos.origin,
-            "targets" => pos.targets
-        }
     end
 end
