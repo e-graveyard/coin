@@ -32,8 +32,7 @@ class Parser
             exit TERMINATION_SUCCESS
         end
 
-        parse_positional
-        exit TERMINATION_SUCCESS
+        return parse_positional
     end
 
     private def parse_and_perform_optional_args
@@ -59,6 +58,37 @@ class Parser
     end
 
     private def parse_positional
+        # ensures that no flag will be passed
+        begin
+            pos = PositionalArgumentsModel.parse(@argv)
+
+        rescue Optarg::UnknownOption
+            die("unknown option.")
+        end
+
+        # ensures that the first argument is a float number.
+        begin
+            amountd = pos.amount.to_f
+            amountd = amountd * 100
+
+        rescue ArgumentError
+            die("value \"#{pos.amount}\" is not a decimal number.")
+        end
+
+        if amountd == 0
+            die("cannot convert zero.")
+        end
+
+        # Ensures that at least one target currency is defined
+        if pos.targets.size == 0
+            die("at least one target currency is required for convertion.")
+        end
+
+        return {
+            "amount"  => amountd,
+            "origin"  => pos.origin,
+            "targets" => pos.targets
+        }
     end
 
     private def show_usage
@@ -104,6 +134,10 @@ class Parser
 
     private def blue(txt)
         txt.colorize(:light_blue)
+    end
+
+    private def green(txt)
+        txt.colorize(:light_green)
     end
 
     private def green(txt)
