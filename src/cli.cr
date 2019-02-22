@@ -43,7 +43,7 @@ module CLI
                 error = true
             end
 
-            Dialog::CLI.unknown_option if error
+            Dialog::Error.unknown_option if error
         end
 
         private def parse_positional
@@ -57,7 +57,7 @@ module CLI
                 pos = PositionalArgumentsModel.parse(@argv)
 
             rescue Optarg::UnknownOption
-                Dialog::CLI.unknown_option
+                Dialog::Error.unknown_option
             end
 
             # upcase all symbols
@@ -73,18 +73,18 @@ module CLI
                 amountf = amountf * 100
 
             rescue ArgumentError
-                Dialog::CLI.not_decimal(pos.amount)
+                Dialog::Error.not_decimal(pos.amount)
             end
 
             amount = amountf.to_i
 
             if amountf == 0
-                Dialog::CLI.zero_value
+                Dialog::Error.zero_value
             end
 
             # ensures that at least one target currency is defined
             if pos.targets.size == 0
-                Dialog::CLI.no_target
+                Dialog::Error.no_target
             end
 
             # ensures that the origin and target currency symbols are valid
@@ -94,19 +94,19 @@ module CLI
                 .concat(targets)
 
             symbols.each do |value|
-                Dialog::CLI.invalid_symbol(value) if
+                Dialog::Error.invalid_symbol(value) if
                     !(Currency::SYMBOLS.has_key? value)
             end
 
             # ensures that the origin currency symbol is not amongst the targets
-            Dialog::CLI.cannot_convert_itself(origin) if
+            Dialog::Error.cannot_convert_itself(origin) if
                 targets.includes? origin
 
             return amount, origin, targets
         end
 
         def act
-            Dialog::CLI.missing_operand if @argv.size == 0
+            Dialog::Error.missing_operand if @argv.size == 0
 
             if @argv.size == 1
                 parse_and_perform_optional_args
