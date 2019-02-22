@@ -1,5 +1,7 @@
 require "optarg"
 require "./dialog"
+require "./currency"
+
 
 class OptionalArgumentsModel < Optarg::Model
     bool "-h"
@@ -8,17 +10,17 @@ class OptionalArgumentsModel < Optarg::Model
     bool "--version"
 end
 
+
 class PositionalArgumentsModel < Optarg::Model
     arg "amount"
     arg "origin"
     arg_array "targets"
 end
 
+
 module CLI
     class Parser
-        @argv = [] of String
-
-        def initialize(argv)
+        def initialize(argv : Array(String))
             @argv = argv
         end
 
@@ -45,7 +47,12 @@ module CLI
         end
 
         private def parse_positional
-            # ensures that no flag will be passed
+            # expected positional arguments
+            amount = Int32
+            origin = String
+            targets = Array(String).new
+
+            # ensures that no flag will be passed as an argument
             begin
                 pos = PositionalArgumentsModel.parse(@argv)
 
@@ -53,29 +60,49 @@ module CLI
                 Dialog::CLI.unknown_option
             end
 
-            # ensures that the first argument is a float number.
+            # upcase all symbols
+            origin = pos.origin.upcase
+
+            pos.targets.each do |value|
+                targets << value.upcase
+            end
+
+            # ensures that the first argument is a decimal greater then zero
             begin
-                amountd = pos.amount.to_f
-                amountd = amountd * 100
+                amountf = pos.amount.to_f
+                amountf = amountf * 100
 
             rescue ArgumentError
                 Dialog::CLI.not_decimal(pos.amount)
             end
 
-            if amountd == 0
+            amount = amountf.to_i
+
+            if amountf == 0
                 Dialog::CLI.zero_value
             end
 
-            # Ensures that at least one target currency is defined
+            # ensures that at least one target currency is defined
             if pos.targets.size == 0
                 Dialog::CLI.no_target
             end
 
-            return {
-                "amount"  => amountd,
-                "origin"  => pos.origin,
-                "targets" => pos.targets
-            }
+            # ensures that the origin and target currency symbols are valid
+            symbols = Array(String)
+                .new
+                .concat([origin])
+                .concat(targets)
+
+            symbols.each do |value|
+                Dialog::CLI.invalid_symbol(value) if
+                    !(Currency::SYMBOLS.has_key? value)
+            end
+
+            # ensures that the origin currency symbol is not amongst the targets
+            Dialog::CLI.cannot_convert_itself(origin) if
+                targets.includes? origin
+
+            return amount, origin, targets
         end
 
         def act
