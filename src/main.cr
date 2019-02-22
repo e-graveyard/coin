@@ -3,13 +3,10 @@ require "./exchanger"
 
 def main
     parser = CLI::Parser.new(ARGV)
-    args = parser.act
-
-    amount = args["amount"]
-    origin = args["origin"]
-    targets = args["targets"]
+    amount, origin, targets = parser.act
 
     fixer = Exchanger::Fixer.new(amount, origin, targets)
+    return 0
 end
 
-main
+exit main
