@@ -63,6 +63,14 @@ module Dialog
         def self.no_target
             Dialog.die("at least one target currency is required for convertion")
         end
+
+        def self.invalid_symbol(val)
+            Dialog.die("\"#{val}\" is not a valid currency symbol")
+        end
+
+        def self.cannot_convert_itself(val)
+            Dialog.die("cannot convert \"#{val}\" to itself")
+        end
     end
 
     class Style
