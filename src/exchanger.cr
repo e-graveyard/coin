@@ -1,10 +1,11 @@
+require "./currency"
+
 module Exchanger
     class Fixer
-        @amount = Int32
-        @origin = String
-        @targets = [] of String
-
-        def initialize(amount, origin, targets)
+        def initialize(amount : Int32, origin : String, targets : Array(String))
+            @amount = amount
+            @origin = origin
+            @targets = targets
         end
     end
 end
