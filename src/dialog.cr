@@ -1,11 +1,7 @@
 require "colorize"
 
-module Dialog
-    def self.die(txt)
-        puts "#{"Error:".colorize(:light_red)} #{txt}."
-        exit 1
-    end
 
+module Dialog
     class CLI
         def self.usage
             "#{Style.bold("Usage: coin [-h] [-v] amount origin <target, ...>")}"
@@ -43,33 +39,40 @@ module Dialog
         def self.version
             puts "coin v0.1.0"
         end
+    end
+
+    class Error
+        def self.die(txt)
+            puts "#{"Error:".colorize(:light_red)} #{txt}."
+            exit 1
+        end
 
         def self.missing_operand
-            Dialog.die("missing operand")
+            die("missing operand")
         end
 
         def self.unknown_option
-            Dialog.die("unknown option")
+            die("unknown option")
         end
 
         def self.not_decimal(val)
-            Dialog.die("value \"#{val}\" is not a decimal number")
+            die("value \"#{val}\" is not a decimal number")
         end
 
         def self.zero_value
-            Dialog.die("cannot convert zero")
+            die("cannot convert zero")
         end
 
         def self.no_target
-            Dialog.die("at least one target currency is required for convertion")
+            die("at least one target currency is required for convertion")
         end
 
         def self.invalid_symbol(val)
-            Dialog.die("\"#{val}\" is not a valid currency symbol")
+            die("\"#{val}\" is not a valid currency symbol")
         end
 
         def self.cannot_convert_itself(val)
-            Dialog.die("cannot convert \"#{val}\" to itself")
+            die("cannot convert \"#{val}\" to itself")
         end
     end
 
