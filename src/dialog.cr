@@ -74,6 +74,14 @@ module Dialog
         def self.cannot_convert_itself(val)
             die("cannot convert \"#{val}\" to itself")
         end
+
+        def self.cant_connect
+            die("cannot connect to the API endpoint")
+        end
+
+        def self.invalid_key
+            die("missing or invalid key")
+        end
     end
 
     class Style
