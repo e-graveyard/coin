@@ -24,7 +24,7 @@ def main
         CLI::Dialog.die "#{e.message}"
     end
 
-    puts results
+    CLI::Dialog.present amount, origin, targets, results
 end
 
 main

@@ -163,6 +163,23 @@ module CLI
             puts "#{Style.red "Error:"} #{txt}."
             exit 1
         end
+
+        def self.present(amount : Int32, origin : String, targets : Array(String), results : Array(Float))
+            puts "#{Style.blue "\nConversion of #{origin} #{amount / 100}.\n"}"
+
+            max_padding = 0
+            results.each do |r|
+                len = "#{r}".size
+                max_padding = len if len > max_padding
+            end
+
+            targets.zip(results).each do |target, result|
+                padding = max_padding - "#{result}".size
+                puts " - #{Style.green result} #{" " * padding} #{Style.dim "(#{target})"} #{Currency::SYMBOLS[target]}."
+            end
+
+            print "\n"
+        end
     end
 
     class Style
@@ -170,12 +187,12 @@ module CLI
             txt.colorize.mode(:bold)
         end
 
-        def self.blue(txt)
-            txt.colorize(:light_blue)
+        def self.dim(txt)
+            txt.colorize.mode(:dim)
         end
 
-        def self.green(txt)
-            txt.colorize(:light_green)
+        def self.blue(txt)
+            txt.colorize(:light_blue)
         end
 
         def self.green(txt)
