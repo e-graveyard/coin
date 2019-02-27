@@ -1,5 +1,5 @@
+require "colorize"
 require "optarg"
-require "./dialog"
 require "./currency"
 
 
@@ -24,16 +24,49 @@ module CLI
             @argv = argv
         end
 
+        def version
+            puts "coin v0.1.0"
+        end
+
+        def help
+            msg = <<-EOP
+            "#{Style.bold "Usage: coin [-h] [-v] amount origin <target, ...>"}"
+
+            Positional arguments:
+                #{Style.blue "amount"}             The amount of money to be converted
+                #{Style.blue "origin"}             The origin currency used as base for conversion
+                #{Style.blue "target"}             Each of the target currencies for conversion
+
+            Optional arguments:
+                #{Style.blue "-h, --help"}         Show this help message and exit
+                #{Style.blue "-v, --version"}      Show the program version and exit
+
+            Examples:
+                $ #{Style.green "coin 1 usd brl"}
+                # => converts 1 us dollar to brazilian real
+
+                $ #{Style.green "coin 2.5 eur rub jpy"}
+                # => converts 2.5 euro to russian rouble and japanese yen
+
+            This is free and open source software (FOSS).
+            Licensed under the MIT license.
+
+            #{Style.bold "Project page: <github.com/caian-org/coin>"}
+            EOP
+
+            puts msg
+        end
+
         private def parse_and_perform_optional_args
             error = false
 
             begin
-                opt = OptionalArgumentsModel.parse(@argv)
+                opt = OptionalArgumentsModel.parse @argv
                 if opt.h? || opt.help?
-                    Dialog::CLI.help
+                    help
 
                 elsif opt.v? || opt.version?
-                    Dialog::CLI.version
+                    version
 
                 else
                     error = true
@@ -43,7 +76,9 @@ module CLI
                 error = true
             end
 
-            Dialog::Error.unknown_option if error
+            if error
+                raise CLI::Exception.new "unknown option"
+            end
         end
 
         private def parse_positional
@@ -54,10 +89,10 @@ module CLI
 
             # ensures that no flag will be passed as an argument
             begin
-                pos = PositionalArgumentsModel.parse(@argv)
+                pos = PositionalArgumentsModel.parse @argv
 
             rescue Optarg::UnknownOption
-                Dialog::Error.unknown_option
+                raise CLI::Exception.new "unknown option"
             end
 
             # upcase all symbols
@@ -73,18 +108,17 @@ module CLI
                 amountf = amountf * 100
 
             rescue ArgumentError
-                Dialog::Error.not_decimal(pos.amount)
+                raise CLI::Exception.new "value \"#{pos.amount}\" is not a decimal number"
             end
 
             amount = amountf.to_i
-
             if amountf == 0
-                Dialog::Error.zero_value
+                raise CLI::Exception.new "cannot convert zero"
             end
 
             # ensures that at least one target currency is defined
             if pos.targets.size == 0
-                Dialog::Error.no_target
+                raise CLI::Exception.new "at least one target currency is required for convertion"
             end
 
             # ensures that the origin and target currency symbols are valid
@@ -94,19 +128,23 @@ module CLI
                 .concat(targets)
 
             symbols.each do |value|
-                Dialog::Error.invalid_symbol(value) if
-                    !(Currency::SYMBOLS.has_key? value)
+                if ! Currency::SYMBOLS.has_key? value
+                    raise CLI::Exception.new "\"#{value}\" is not a valid currency symbol"
+                end
             end
 
             # ensures that the origin currency symbol is not amongst the targets
-            Dialog::Error.cannot_convert_itself(origin) if
-                targets.includes? origin
+            if targets.includes? origin
+                raise CLI::Exception.new "cannot convert \"#{origin}\" to itself"
+            end
 
             return amount, origin, targets
         end
 
         def act
-            Dialog::Error.missing_operand if @argv.size == 0
+            if @argv.size == 0
+                raise CLI::Exception.new "missing operand"
+            end
 
             if @argv.size == 1
                 parse_and_perform_optional_args
@@ -114,6 +152,38 @@ module CLI
             end
 
             return parse_positional
+        end
+    end
+
+    class Exception < Exception
+    end
+
+    class Dialog
+        def self.die(txt)
+            puts "#{Style.red "Error:"} #{txt}."
+            exit 1
+        end
+    end
+
+    class Style
+        def self.bold(txt)
+            txt.colorize.mode(:bold)
+        end
+
+        def self.blue(txt)
+            txt.colorize(:light_blue)
+        end
+
+        def self.green(txt)
+            txt.colorize(:light_green)
+        end
+
+        def self.green(txt)
+            txt.colorize(:light_green)
+        end
+
+        def self.red(txt)
+            txt.colorize(:light_red)
         end
     end
 end
