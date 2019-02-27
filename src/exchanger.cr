@@ -1,7 +1,6 @@
 require "json"
 require "http/client"
 require "./currency"
-require "./dialog"
 
 
 module Exchanger
@@ -27,7 +26,7 @@ module Exchanger
             end
         end
 
-        def to_money(base, target)
+        def compute(base, target)
             rate = target / base
             value = (@amount * rate) / 100
 
@@ -44,7 +43,7 @@ module Exchanger
                 body = ( HTTP::Client.get "#{@endpoint}?#{params}" ).body
 
             rescue Socket::Addrinfo::Error
-                Dialog::Error.cant_connect
+                raise Exchanger::Exception.new "cannot connect to the API endpoint"
             end
 
             response = JSON.parse(body)
@@ -52,18 +51,23 @@ module Exchanger
                 code = response["error"]["code"]
 
                 if code == 101
-                    Dialog::Error.invalid_key
+                    raise Exchanger::Exception.new "missing or invalid key"
                 end
             end
 
             rates = response["rates"]
             base = to_large_int(rates[@origin])
 
-            puts "$#{@amount / 100} #{@origin}\n\n"
+            results = Array(Float64).new
             @targets.each do |symbol|
                 target = to_large_int(rates[symbol])
-                puts " -> $%.2f #{symbol}" % to_money(base, target)
+                results << compute(base, target)
             end
+
+            results
         end
+    end
+
+    class Exception < Exception
     end
 end
