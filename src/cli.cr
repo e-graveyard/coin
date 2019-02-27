@@ -30,7 +30,7 @@ module CLI
 
         def help
             msg = <<-EOP
-            "#{Style.bold "Usage: coin [-h] [-v] amount origin <target, ...>"}"
+            #{Style.bold "Usage: coin [-h] [-v] amount origin <target, ...>"}
 
             Positional arguments:
                 #{Style.blue "amount"}             The amount of money to be converted
