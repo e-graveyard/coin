@@ -1,11 +1,13 @@
 # COIN: CLI to currency conversion
 
 <p align="center"
+
 ![example](example.png)
 >
 </p>
 
 <p align="center"
+
 [![pd](https://forthebadge.com/images/badges/cc-0.svg)][ccz] [![didnt-ask](https://forthebadge.com/images/badges/you-didnt-ask-for-this.svg)][ftb]
 >
 </p>
