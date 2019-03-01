@@ -48,8 +48,7 @@ module CLI
                 $ #{Style.green "coin 2.5 eur rub jpy"}
                 # => converts 2.5 euro to russian rouble and japanese yen
 
-            This is free and open source software (FOSS).
-            Licensed under the MIT license.
+            This project is dedicated to the Public Domain (CC0).
 
             #{Style.bold "Project page: <github.com/caian-org/coin>"}
             EOP
