@@ -71,13 +71,13 @@ Project page: <github.com/caian-org/coin>
 
 ### Running in Docker
 
-- _Pull from DockerHub:_
+- __Pull from DockerHub:__
 
 ```sh
 $ docker pull caian/coin
 ```
 
-- _Run the container_
+- __Run the container:__
 
 ```sh
 $ docker run -e FIXER_API_TOKEN="my_token" caian/coin 1 usd jpy
@@ -97,5 +97,5 @@ docker build -t coin .
 To the extent possible under law, [Caian Rais Ertl](https://github.com/caiertl)
 has waived all copyright and related or neighboring rights to this work.
 
-`coin` depends on [`optarg`](https://github.com/mosop/optarg). `optarg` is
+Coin depends on [`optarg`](https://github.com/mosop/optarg). `optarg` is
 licensed under the MIT license.
