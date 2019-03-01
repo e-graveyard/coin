@@ -5,7 +5,7 @@ authors:
   - Caian R. Ertl <hi@caian.org>
 
 targets:
-  jp:
+  coin:
     main: src/main.cr
 
 dependencies:
@@ -14,4 +14,4 @@ dependencies:
 
 crystal: 0.27.2
 
-license: MIT
+license: CC0 1.0 (Public Domain Dedication)
