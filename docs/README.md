@@ -72,6 +72,14 @@ For a comprehensive list of all available currencies, see
 
 ### From source
 
+`coin` is implemented in [Crystal](https://crystal-lang.org). In order to build
+from source you must have the [Crystal compiler](https://crystal-lang.org/reference/installation).
+
+```sh
+$ make
+$ (sudo) make install
+```
+
 ### Running in Docker
 
 - __Pull from DockerHub:__
@@ -94,6 +102,19 @@ docker build -t coin .
 
 
 ## Contributing
+
+Contributions are welcomed. You can contribute with bugfixes and minor
+features. For bigger, more complex features or architectural changes, please
+contact me beforehand.
+
+If you wish to contribute:
+
+- Fork it (https://github.com/caian-org/coin/fork)
+- Create your feature branch (`git checkout -b my-new-feature`)
+- Commit your changes (`git commit -am 'Add some feature'`)
+- Push to the branch (`git push origin my-new-feature`)
+- Create a new Pull Request
+
 
 ## License
 
