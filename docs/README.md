@@ -61,6 +61,9 @@ This project is dedicated to the Public Domain (CC0).
 Project page: <github.com/caian-org/coin>
 ```
 
+For a comprehensive list of all available currencies, see
+[`docs/currencies.rst`](docs/currencies.rst).
+
 ### Fixer API token
 
 ## Installation
