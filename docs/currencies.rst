@@ -5,341 +5,341 @@ Supported Currencies
 +--------------+-----------------------------------------+
 | `ISO Code`_  | Currency Name                           |
 +==============+=========================================+
-| **AED**      | United Arab Emirates dirham             |
+| ``AED``      | United Arab Emirates dirham             |
 +--------------+-----------------------------------------+
-| **AFN**      | Afghan afghani                          |
+| ``AFN``      | Afghan afghani                          |
 +--------------+-----------------------------------------+
-| **ALL**      | Albanian lek                            |
+| ``ALL``      | Albanian lek                            |
 +--------------+-----------------------------------------+
-| **AMD**      | Armenian dram                           |
+| ``AMD``      | Armenian dram                           |
 +--------------+-----------------------------------------+
-| **ANG**      | Netherlands Antillean guilder           |
+| ``ANG``      | Netherlands Antillean guilder           |
 +--------------+-----------------------------------------+
-| **AOA**      | Angolan kwanza                          |
+| ``AOA``      | Angolan kwanza                          |
 +--------------+-----------------------------------------+
-| **ARS**      | Argentine peso                          |
+| ``ARS``      | Argentine peso                          |
 +--------------+-----------------------------------------+
-| **AUD**      | Australian dollar                       |
+| ``AUD``      | Australian dollar                       |
 +--------------+-----------------------------------------+
-| **AWG**      | Aruban florin                           |
+| ``AWG``      | Aruban florin                           |
 +--------------+-----------------------------------------+
-| **AZN**      | Azerbaijani manat                       |
+| ``AZN``      | Azerbaijani manat                       |
 +--------------+-----------------------------------------+
-| **BAM**      | Bosnia and Herzegovina convertible mark |
+| ``BAM``      | Bosnia and Herzegovina convertible mark |
 +--------------+-----------------------------------------+
-| **BBD**      | Barbados dollar                         |
+| ``BBD``      | Barbados dollar                         |
 +--------------+-----------------------------------------+
-| **BDT**      | Bangladeshi taka                        |
+| ``BDT``      | Bangladeshi taka                        |
 +--------------+-----------------------------------------+
-| **BGN**      | Bulgarian lev                           |
+| ``BGN``      | Bulgarian lev                           |
 +--------------+-----------------------------------------+
-| **BHD**      | Bahraini dinar                          |
+| ``BHD``      | Bahraini dinar                          |
 +--------------+-----------------------------------------+
-| **BIF**      | Burundian franc                         |
+| ``BIF``      | Burundian franc                         |
 +--------------+-----------------------------------------+
-| **BMD**      | Bermudian dollar                        |
+| ``BMD``      | Bermudian dollar                        |
 +--------------+-----------------------------------------+
-| **BND**      | Brunei dollar                           |
+| ``BND``      | Brunei dollar                           |
 +--------------+-----------------------------------------+
-| **BOB**      | Boliviano                               |
+| ``BOB``      | Boliviano                               |
 +--------------+-----------------------------------------+
-| **BRL**      | Brazilian real                          |
+| ``BRL``      | Brazilian real                          |
 +--------------+-----------------------------------------+
-| **BSD**      | Bahamian dollar                         |
+| ``BSD``      | Bahamian dollar                         |
 +--------------+-----------------------------------------+
-| **BTC** [#]_ | Bitcoin                                 |
+| ``BTC`` [#]_ | Bitcoin                                 |
 +--------------+-----------------------------------------+
-| **BTN**      | Bhutanese ngultrum                      |
+| ``BTN``      | Bhutanese ngultrum                      |
 +--------------+-----------------------------------------+
-| **BWP**      | Botswana pula                           |
+| ``BWP``      | Botswana pula                           |
 +--------------+-----------------------------------------+
-| **BYR** [#]_ | Belarusian ruble (second ruble)         |
+| ``BYR`` [#]_ | Belarusian ruble (second ruble)         |
 +--------------+-----------------------------------------+
-| **BYN**      | Belarusian ruble (third ruble)          |
+| ``BYN``      | Belarusian ruble (third ruble)          |
 +--------------+-----------------------------------------+
-| **BZD**      | Belize dollar                           |
+| ``BZD``      | Belize dollar                           |
 +--------------+-----------------------------------------+
-| **CAD**      | Canadian dollar                         |
+| ``CAD``      | Canadian dollar                         |
 +--------------+-----------------------------------------+
-| **CDF**      | Congolese franc                         |
+| ``CDF``      | Congolese franc                         |
 +--------------+-----------------------------------------+
-| **CHF**      | Swiss franc                             |
+| ``CHF``      | Swiss franc                             |
 +--------------+-----------------------------------------+
-| **CLF**      | Unidad de Fomento                       |
+| ``CLF``      | Unidad de Fomento                       |
 +--------------+-----------------------------------------+
-| **CLP**      | Chilean peso                            |
+| ``CLP``      | Chilean peso                            |
 +--------------+-----------------------------------------+
-| **CNY**      | Renminbi yuan                           |
+| ``CNY``      | Renminbi yuan                           |
 +--------------+-----------------------------------------+
-| **COP**      | Colombian peso                          |
+| ``COP``      | Colombian peso                          |
 +--------------+-----------------------------------------+
-| **CRC**      | Costa Rican colon                       |
+| ``CRC``      | Costa Rican colon                       |
 +--------------+-----------------------------------------+
-| **CUC**      | Cuban convertible peso                  |
+| ``CUC``      | Cuban convertible peso                  |
 +--------------+-----------------------------------------+
-| **CUP**      | Cuban peso                              |
+| ``CUP``      | Cuban peso                              |
 +--------------+-----------------------------------------+
-| **CVE**      | Cape Verde escudo                       |
+| ``CVE``      | Cape Verde escudo                       |
 +--------------+-----------------------------------------+
-| **CZK**      | Czech koruna                            |
+| ``CZK``      | Czech koruna                            |
 +--------------+-----------------------------------------+
-| **DJF**      | Djiboutian franc                        |
+| ``DJF``      | Djiboutian franc                        |
 +--------------+-----------------------------------------+
-| **DKK**      | Danish krone                            |
+| ``DKK``      | Danish krone                            |
 +--------------+-----------------------------------------+
-| **DOP**      | Dominican peso                          |
+| ``DOP``      | Dominican peso                          |
 +--------------+-----------------------------------------+
-| **DZD**      | Algerian dinar                          |
+| ``DZD``      | Algerian dinar                          |
 +--------------+-----------------------------------------+
-| **EGP**      | Egyptian pound                          |
+| ``EGP``      | Egyptian pound                          |
 +--------------+-----------------------------------------+
-| **ERN**      | Eritrean nakfa                          |
+| ``ERN``      | Eritrean nakfa                          |
 +--------------+-----------------------------------------+
-| **ETB**      | Ethiopian birr                          |
+| ``ETB``      | Ethiopian birr                          |
 +--------------+-----------------------------------------+
-| **EUR**      | Euro                                    |
+| ``EUR``      | Euro                                    |
 +--------------+-----------------------------------------+
-| **FJD**      | Fiji dollar                             |
+| ``FJD``      | Fiji dollar                             |
 +--------------+-----------------------------------------+
-| **FKP**      | Falkland Islands pound                  |
+| ``FKP``      | Falkland Islands pound                  |
 +--------------+-----------------------------------------+
-| **GBP**      | Pound sterling                          |
+| ``GBP``      | Pound sterling                          |
 +--------------+-----------------------------------------+
-| **GEL**      | Georgian lari                           |
+| ``GEL``      | Georgian lari                           |
 +--------------+-----------------------------------------+
-| **GGP**      | Guernsey pound                          |
+| ``GGP``      | Guernsey pound                          |
 +--------------+-----------------------------------------+
-| **GHS**      | Ghanaian cedi                           |
+| ``GHS``      | Ghanaian cedi                           |
 +--------------+-----------------------------------------+
-| **GIP**      | Gibraltar pound                         |
+| ``GIP``      | Gibraltar pound                         |
 +--------------+-----------------------------------------+
-| **GMD**      | Gambian dalasi                          |
+| ``GMD``      | Gambian dalasi                          |
 +--------------+-----------------------------------------+
-| **GNF**      | Guinean franc                           |
+| ``GNF``      | Guinean franc                           |
 +--------------+-----------------------------------------+
-| **GTQ**      | Guatemalan quetzal                      |
+| ``GTQ``      | Guatemalan quetzal                      |
 +--------------+-----------------------------------------+
-| **GYD**      | Guyanese dollar                         |
+| ``GYD``      | Guyanese dollar                         |
 +--------------+-----------------------------------------+
-| **HKD**      | Hong Kong dollar                        |
+| ``HKD``      | Hong Kong dollar                        |
 +--------------+-----------------------------------------+
-| **HNL**      | Honduran lempira                        |
+| ``HNL``      | Honduran lempira                        |
 +--------------+-----------------------------------------+
-| **HRK**      | Croatian kuna                           |
+| ``HRK``      | Croatian kuna                           |
 +--------------+-----------------------------------------+
-| **HTG**      | Haitian gourde                          |
+| ``HTG``      | Haitian gourde                          |
 +--------------+-----------------------------------------+
-| **HUF**      | Hungarian forint                        |
+| ``HUF``      | Hungarian forint                        |
 +--------------+-----------------------------------------+
-| **IDR**      | Indonesian rupiah                       |
+| ``IDR``      | Indonesian rupiah                       |
 +--------------+-----------------------------------------+
-| **ILS**      | Israeli new shekel                      |
+| ``ILS``      | Israeli new shekel                      |
 +--------------+-----------------------------------------+
-| **IMP**      | Isle of Man pound                       |
+| ``IMP``      | Isle of Man pound                       |
 +--------------+-----------------------------------------+
-| **INR**      | Indian rupee                            |
+| ``INR``      | Indian rupee                            |
 +--------------+-----------------------------------------+
-| **IQD**      | Iraqi dinar                             |
+| ``IQD``      | Iraqi dinar                             |
 +--------------+-----------------------------------------+
-| **IRR**      | Iranian rial                            |
+| ``IRR``      | Iranian rial                            |
 +--------------+-----------------------------------------+
-| **ISK**      | Icelandic króna                         |
+| ``ISK``      | Icelandic króna                         |
 +--------------+-----------------------------------------+
-| **JEP**      | Jersey pound                            |
+| ``JEP``      | Jersey pound                            |
 +--------------+-----------------------------------------+
-| **JMD**      | Jamaican dollar                         |
+| ``JMD``      | Jamaican dollar                         |
 +--------------+-----------------------------------------+
-| **JOD**      | Jordanian dinar                         |
+| ``JOD``      | Jordanian dinar                         |
 +--------------+-----------------------------------------+
-| **JPY**      | Japanese yen                            |
+| ``JPY``      | Japanese yen                            |
 +--------------+-----------------------------------------+
-| **KES**      | Kenyan shilling                         |
+| ``KES``      | Kenyan shilling                         |
 +--------------+-----------------------------------------+
-| **KGS**      | Kyrgyzstani som                         |
+| ``KGS``      | Kyrgyzstani som                         |
 +--------------+-----------------------------------------+
-| **KHR**      | Cambodian riel                          |
+| ``KHR``      | Cambodian riel                          |
 +--------------+-----------------------------------------+
-| **KMF**      | Comoro franc                            |
+| ``KMF``      | Comoro franc                            |
 +--------------+-----------------------------------------+
-| **KPW**      | North Korean won                        |
+| ``KPW``      | North Korean won                        |
 +--------------+-----------------------------------------+
-| **KRW**      | South Korean won                        |
+| ``KRW``      | South Korean won                        |
 +--------------+-----------------------------------------+
-| **KWD**      | Kuwaiti dinar                           |
+| ``KWD``      | Kuwaiti dinar                           |
 +--------------+-----------------------------------------+
-| **KYD**      | Cayman Islands dollar                   |
+| ``KYD``      | Cayman Islands dollar                   |
 +--------------+-----------------------------------------+
-| **KZT**      | Kazakhstani tenge                       |
+| ``KZT``      | Kazakhstani tenge                       |
 +--------------+-----------------------------------------+
-| **LAK**      | Lao kip                                 |
+| ``LAK``      | Lao kip                                 |
 +--------------+-----------------------------------------+
-| **LBP**      | Lebanese pound                          |
+| ``LBP``      | Lebanese pound                          |
 +--------------+-----------------------------------------+
-| **LKR**      | Sri Lankan rupee                        |
+| ``LKR``      | Sri Lankan rupee                        |
 +--------------+-----------------------------------------+
-| **LRD**      | Liberian dollar                         |
+| ``LRD``      | Liberian dollar                         |
 +--------------+-----------------------------------------+
-| **LSL**      | Lesotho loti                            |
+| ``LSL``      | Lesotho loti                            |
 +--------------+-----------------------------------------+
-| **LTL**      | Lithuanian litas                        |
+| ``LTL``      | Lithuanian litas                        |
 +--------------+-----------------------------------------+
-| **LVL**      | Latvian lats                            |
+| ``LVL``      | Latvian lats                            |
 +--------------+-----------------------------------------+
-| **LYD**      | Libyan dinar                            |
+| ``LYD``      | Libyan dinar                            |
 +--------------+-----------------------------------------+
-| **MAD**      | Moroccan dirham                         |
+| ``MAD``      | Moroccan dirham                         |
 +--------------+-----------------------------------------+
-| **MDL**      | Moldovan leu                            |
+| ``MDL``      | Moldovan leu                            |
 +--------------+-----------------------------------------+
-| **MGA**      | Malagasy ariary                         |
+| ``MGA``      | Malagasy ariary                         |
 +--------------+-----------------------------------------+
-| **MKD**      | Macedonian denar                        |
+| ``MKD``      | Macedonian denar                        |
 +--------------+-----------------------------------------+
-| **MMK**      | Myanmar kyat                            |
+| ``MMK``      | Myanmar kyat                            |
 +--------------+-----------------------------------------+
-| **MNT**      | Mongolian togrog                        |
+| ``MNT``      | Mongolian togrog                        |
 +--------------+-----------------------------------------+
-| **MOP**      | Macanese pataca                         |
+| ``MOP``      | Macanese pataca                         |
 +--------------+-----------------------------------------+
-| **MRO**      | Mauritanian ouguiya                     |
+| ``MRO``      | Mauritanian ouguiya                     |
 +--------------+-----------------------------------------+
-| **MUR**      | Mauritian rupee                         |
+| ``MUR``      | Mauritian rupee                         |
 +--------------+-----------------------------------------+
-| **MVR**      | Maldivian rufiyaa                       |
+| ``MVR``      | Maldivian rufiyaa                       |
 +--------------+-----------------------------------------+
-| **MWK**      | Malawian kwacha                         |
+| ``MWK``      | Malawian kwacha                         |
 +--------------+-----------------------------------------+
-| **MXN**      | Mexican peso                            |
+| ``MXN``      | Mexican peso                            |
 +--------------+-----------------------------------------+
-| **MYR**      | Malaysian ringgit                       |
+| ``MYR``      | Malaysian ringgit                       |
 +--------------+-----------------------------------------+
-| **MZN**      | Mozambican metical                      |
+| ``MZN``      | Mozambican metical                      |
 +--------------+-----------------------------------------+
-| **NAD**      | Namibian dollar                         |
+| ``NAD``      | Namibian dollar                         |
 +--------------+-----------------------------------------+
-| **NGN**      | Nigerian naira                          |
+| ``NGN``      | Nigerian naira                          |
 +--------------+-----------------------------------------+
-| **NIO**      | Nicaraguan cordoba                      |
+| ``NIO``      | Nicaraguan cordoba                      |
 +--------------+-----------------------------------------+
-| **NOK**      | Norwegian krone                         |
+| ``NOK``      | Norwegian krone                         |
 +--------------+-----------------------------------------+
-| **NPR**      | Nepalese rupee                          |
+| ``NPR``      | Nepalese rupee                          |
 +--------------+-----------------------------------------+
-| **NZD**      | New Zealand dollar                      |
+| ``NZD``      | New Zealand dollar                      |
 +--------------+-----------------------------------------+
-| **OMR**      | Omani rial                              |
+| ``OMR``      | Omani rial                              |
 +--------------+-----------------------------------------+
-| **PAB**      | Panamanian balboa                       |
+| ``PAB``      | Panamanian balboa                       |
 +--------------+-----------------------------------------+
-| **PEN**      | Peruvian sol                            |
+| ``PEN``      | Peruvian sol                            |
 +--------------+-----------------------------------------+
-| **PGK**      | Papua New Guinean kina                  |
+| ``PGK``      | Papua New Guinean kina                  |
 +--------------+-----------------------------------------+
-| **PHP**      | Philippine peso                         |
+| ``PHP``      | Philippine peso                         |
 +--------------+-----------------------------------------+
-| **PKR**      | Pakistani rupee                         |
+| ``PKR``      | Pakistani rupee                         |
 +--------------+-----------------------------------------+
-| **PLN**      | Polish złoty                            |
+| ``PLN``      | Polish złoty                            |
 +--------------+-----------------------------------------+
-| **PYG**      | Paraguayan guarani                      |
+| ``PYG``      | Paraguayan guarani                      |
 +--------------+-----------------------------------------+
-| **QAR**      | Qatari riyal                            |
+| ``QAR``      | Qatari riyal                            |
 +--------------+-----------------------------------------+
-| **RON**      | Romanian leu                            |
+| ``RON``      | Romanian leu                            |
 +--------------+-----------------------------------------+
-| **RSD**      | Serbian dinar                           |
+| ``RSD``      | Serbian dinar                           |
 +--------------+-----------------------------------------+
-| **RUB**      | Russian ruble                           |
+| ``RUB``      | Russian ruble                           |
 +--------------+-----------------------------------------+
-| **RWF**      | Rwandan franc                           |
+| ``RWF``      | Rwandan franc                           |
 +--------------+-----------------------------------------+
-| **SAR**      | Saudi riyal                             |
+| ``SAR``      | Saudi riyal                             |
 +--------------+-----------------------------------------+
-| **SBD**      | Solomon Islands dollar                  |
+| ``SBD``      | Solomon Islands dollar                  |
 +--------------+-----------------------------------------+
-| **SCR**      | Seychelles rupee                        |
+| ``SCR``      | Seychelles rupee                        |
 +--------------+-----------------------------------------+
-| **SDG**      | Sudanese pound                          |
+| ``SDG``      | Sudanese pound                          |
 +--------------+-----------------------------------------+
-| **SEK**      | Swedish krona                           |
+| ``SEK``      | Swedish krona                           |
 +--------------+-----------------------------------------+
-| **SGD**      | Singapore dollar                        |
+| ``SGD``      | Singapore dollar                        |
 +--------------+-----------------------------------------+
-| **SHP**      | Saint Helena pound                      |
+| ``SHP``      | Saint Helena pound                      |
 +--------------+-----------------------------------------+
-| **SLL**      | Sierra Leonean leone                    |
+| ``SLL``      | Sierra Leonean leone                    |
 +--------------+-----------------------------------------+
-| **SOS**      | Somali shilling                         |
+| ``SOS``      | Somali shilling                         |
 +--------------+-----------------------------------------+
-| **SRD**      | Surinamese dollar                       |
+| ``SRD``      | Surinamese dollar                       |
 +--------------+-----------------------------------------+
-| **STD**      | Sao Tome and Principe dobra             |
+| ``STD``      | Sao Tome and Principe dobra             |
 +--------------+-----------------------------------------+
-| **SVC**      | Salvadoran colon                        |
+| ``SVC``      | Salvadoran colon                        |
 +--------------+-----------------------------------------+
-| **SYP**      | Syrian pound                            |
+| ``SYP``      | Syrian pound                            |
 +--------------+-----------------------------------------+
-| **SZL**      | Swazi lilangeni                         |
+| ``SZL``      | Swazi lilangeni                         |
 +--------------+-----------------------------------------+
-| **THB**      | Thai baht                               |
+| ``THB``      | Thai baht                               |
 +--------------+-----------------------------------------+
-| **TJS**      | Tajikistani somoni                      |
+| ``TJS``      | Tajikistani somoni                      |
 +--------------+-----------------------------------------+
-| **TMT**      | Turkmenistan manat                      |
+| ``TMT``      | Turkmenistan manat                      |
 +--------------+-----------------------------------------+
-| **TND**      | Tunisian dinar                          |
+| ``TND``      | Tunisian dinar                          |
 +--------------+-----------------------------------------+
-| **TOP**      | Tongan pa'anga                          |
+| ``TOP``      | Tongan pa'anga                          |
 +--------------+-----------------------------------------+
-| **TRY**      | Turkish lira                            |
+| ``TRY``      | Turkish lira                            |
 +--------------+-----------------------------------------+
-| **TTD**      | Trinidad and Tobago dollar              |
+| ``TTD``      | Trinidad and Tobago dollar              |
 +--------------+-----------------------------------------+
-| **TWD**      | New Taiwan dollar                       |
+| ``TWD``      | New Taiwan dollar                       |
 +--------------+-----------------------------------------+
-| **TZS**      | Tanzanian shilling                      |
+| ``TZS``      | Tanzanian shilling                      |
 +--------------+-----------------------------------------+
-| **UAH**      | Ukrainian hryvnia                       |
+| ``UAH``      | Ukrainian hryvnia                       |
 +--------------+-----------------------------------------+
-| **UGX**      | Ugandan shilling                        |
+| ``UGX``      | Ugandan shilling                        |
 +--------------+-----------------------------------------+
-| **USD**      | United States dollar                    |
+| ``USD``      | United States dollar                    |
 +--------------+-----------------------------------------+
-| **UYU**      | Uruguayan peso                          |
+| ``UYU``      | Uruguayan peso                          |
 +--------------+-----------------------------------------+
-| **UZS**      | Uzbekistan som                          |
+| ``UZS``      | Uzbekistan som                          |
 +--------------+-----------------------------------------+
-| **VEF**      | Venezuelan bolivar                      |
+| ``VEF``      | Venezuelan bolivar                      |
 +--------------+-----------------------------------------+
-| **VND**      | Vietnamese dong                         |
+| ``VND``      | Vietnamese dong                         |
 +--------------+-----------------------------------------+
-| **VUV**      | Vanuatu vatu                            |
+| ``VUV``      | Vanuatu vatu                            |
 +--------------+-----------------------------------------+
-| **WST**      | Samoan tala                             |
+| ``WST``      | Samoan tala                             |
 +--------------+-----------------------------------------+
-| **XAF**      | Central African CFA franc               |
+| ``XAF``      | Central African CFA franc               |
 +--------------+-----------------------------------------+
-| **XAG** [#]_ | Silver                                  |
+| ``XAG`` [#]_ | Silver                                  |
 +--------------+-----------------------------------------+
-| **XAU** [#]_ | Gold                                    |
+| ``XAU`` [#]_ | Gold                                    |
 +--------------+-----------------------------------------+
-| **XCD**      | East Caribbean dollar                   |
+| ``XCD``      | East Caribbean dollar                   |
 +--------------+-----------------------------------------+
-| **XDR** [#]_ | Special drawing rights                  |
+| ``XDR`` [#]_ | Special drawing rights                  |
 +--------------+-----------------------------------------+
-| **XOF**      | West African CFA franc                  |
+| ``XOF``      | West African CFA franc                  |
 +--------------+-----------------------------------------+
-| **XPF**      | CFP franc                               |
+| ``XPF``      | CFP franc                               |
 +--------------+-----------------------------------------+
-| **YER**      | Yemeni rial                             |
+| ``YER``      | Yemeni rial                             |
 +--------------+-----------------------------------------+
-| **ZAR**      | South African rand                      |
+| ``ZAR``      | South African rand                      |
 +--------------+-----------------------------------------+
-| **ZMK** [#]_ | Old Zambian kwacha                      |
+| ``ZMK`` [#]_ | Old Zambian kwacha                      |
 +--------------+-----------------------------------------+
-| **ZMW**      | Zambian kwacha                          |
+| ``ZMW``      | Zambian kwacha                          |
 +--------------+-----------------------------------------+
-| **ZWL**      | Zimbabwean dollar                       |
+| ``ZWL``      | Zimbabwean dollar                       |
 +--------------+-----------------------------------------+
 
 
