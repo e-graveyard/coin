@@ -84,6 +84,16 @@ $ export FIXER_API_TOKEN="ys1r39m5zc71xpvdjpqsnrhwqtxe98cj"
 
 ### Pre-built
 
+The pre-built binary is available at the [release page](https://github.com/caian-org/coin/releases).
+Download the most recent version, give the binary execution permissions and
+move to a directory on the `$PATH`.
+
+```sh
+$ wget https://github.com/caian-org/coin/releases/download/v0.1.0/coin
+$ chmod +x coin
+$ mv coin /usr/bin
+```
+
 ### From source
 
 Coin is implemented in [Crystal](https://crystal-lang.org). In order to build
