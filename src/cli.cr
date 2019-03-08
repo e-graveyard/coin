@@ -129,7 +129,7 @@ module CLI
                 .concat(targets)
 
             symbols.each do |value|
-                if ! Currency::SYMBOLS.has_key? value
+                unless Currency::SYMBOLS.has_key? value
                     raise CLI::Exception.new "\"#{value}\" is not a valid currency symbol"
                 end
             end
