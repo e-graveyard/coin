@@ -2,6 +2,8 @@ require "colorize"
 require "optarg"
 require "./currency"
 
+VERSION = "v0.1.0"
+
 
 class OptionalArgumentsModel < Optarg::Model
     bool "-h"
@@ -25,7 +27,7 @@ module CLI
         end
 
         def version
-            puts "coin v0.1.0"
+            puts "coin #{VERSION}"
         end
 
         def help
