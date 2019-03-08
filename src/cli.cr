@@ -183,7 +183,7 @@ module CLI
         end
     end
 
-    class Style
+    private class Style
         def self.bold(txt)
             txt.colorize.mode(:bold)
         end
