@@ -17,37 +17,15 @@ module Exchanger
             @token = token
         end
 
-        def to_large_int(value)
-            begin
-                return value.as_f * 1000000.0
-
-            rescue TypeCastError
-                return (value.as_i * 1000000).to_f
-            end
-        end
-
-        def compute(base, target)
-            rate = target / base
-            value = (@amount * rate) / 100
-
-            (value * 100).round / 100.0
-        end
-
         def convert
-            params = HTTP::Params.encode({
-                "access_key" => (@token || "")
-            })
-
-            body = ""
             begin
-                body = ( HTTP::Client.get "#{@endpoint}?#{params}" ).body
+                response = request
 
             rescue Socket::Addrinfo::Error
                 raise Exchanger::Exception.new "cannot connect to the API endpoint"
             end
 
-            response = JSON.parse(body)
-            if response["success"] == false
+            unless response["success"].as_bool
                 code = response["error"]["code"]
 
                 if code == 101
@@ -65,6 +43,31 @@ module Exchanger
             end
 
             results
+        end
+
+        private def request
+            params = HTTP::Params.encode({
+                "access_key" => (@token || "")
+            })
+
+            body = ( HTTP::Client.get "#{@endpoint}?#{params}" ).body
+            return JSON.parse(body)
+        end
+
+        private def to_large_int(value)
+            begin
+                return value.as_f * 1000000.0
+
+            rescue TypeCastError
+                return (value.as_i * 1000000).to_f
+            end
+        end
+
+        private def compute(base, target)
+            rate = target / base
+            value = (@amount * rate) / 100
+
+            (value * 100).round / 100.0
         end
     end
 
