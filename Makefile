@@ -3,7 +3,10 @@
 C = crystal
 ARTIFACT = coin
 
-build:
+shards:
+	if ! [ -d "./lib" ]; then shards install; fi
+
+build: shards
 	$(C) build src/main.cr -o $(ARTIFACT)
 
 install:
