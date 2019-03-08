@@ -174,7 +174,9 @@ module CLI
 
             targets.zip(results).each do |target, result|
                 padding = max_padding - "#{result}".size
-                puts " - #{Style.green result} #{" " * padding} #{Style.dim "(#{target})"} #{Currency::SYMBOLS[target]}."
+
+                print " - #{Style.green result} #{" " * padding}"
+                print "#{Style.dim "(#{target})"} #{Currency::SYMBOLS[target]}.\n"
             end
 
             print "\n"
