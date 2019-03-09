@@ -55,6 +55,23 @@ module CLI
       puts msg
     end
 
+    def act
+      if @argv.size == 0
+        raise CLI::Exception.new "missing operand"
+      end
+
+      if @argv.size == 1
+        parse_and_perform_optional_args
+        return empty
+      end
+
+      return parse_positional
+    end
+
+    private def empty
+      {0, "", [] of String}
+    end
+
     private def parse_and_perform_optional_args
       error = false
 
@@ -80,7 +97,7 @@ module CLI
       # expected positional arguments
       amount = Int32
       origin = String
-      targets = Array(String).new
+      targets = [] of String
 
       # ensures that no flag will be passed as an argument
       begin
@@ -111,14 +128,12 @@ module CLI
 
       # ensures that at least one target currency is defined
       if pos.targets.size == 0
-        raise CLI::Exception.new "at least one target currency is required for convertion"
+        raise CLI::Exception.new "at least one target currency is required for conversion"
       end
 
       # ensures that the origin and target currency symbols are valid
-      symbols = Array(String)
-        .new
-        .concat([origin])
-        .concat(targets)
+      symbols = [origin]
+      symbols.concat targets
 
       symbols.each do |value|
         unless Currency::SYMBOLS.has_key? value
@@ -132,19 +147,6 @@ module CLI
       end
 
       return amount, origin, targets
-    end
-
-    def act
-      if @argv.size == 0
-        raise CLI::Exception.new "missing operand"
-      end
-
-      if @argv.size == 1
-        parse_and_perform_optional_args
-        exit 0
-      end
-
-      return parse_positional
     end
   end
 
