@@ -19,4 +19,7 @@ run:
 	./$(ARTIFACT)
 
 clean:
-	rm -f $(ARTIFACT)
+	rm -f $(ARTIFACT) && rm -rf lib
+
+test:
+	$(C) spec
