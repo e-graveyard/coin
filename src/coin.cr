@@ -6,6 +6,10 @@ def main
 
   begin
     amount, origin, targets = parser.act
+    if origin.empty?
+      exit 0
+    end
+
   rescue e : CLI::Exception
     CLI::Dialog.die "#{e.message}"
   end
