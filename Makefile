@@ -7,7 +7,7 @@ shards:
 	if ! [ -d "./lib" ]; then shards install; fi
 
 build: shards
-	$(C) build src/main.cr -o $(ARTIFACT)
+	$(C) build src/coin.cr -o $(ARTIFACT)
 
 install:
 	mv $(ARTIFACT) /usr/bin
