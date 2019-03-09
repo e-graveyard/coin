@@ -23,6 +23,8 @@ jobs:
 
     - stage: build
       name: "Build the Docker image"
+      install:
+        - true # Just a hack to skip the install phase
       script:
         - docker build -t coin .
         - docker run coin -v
@@ -31,7 +33,9 @@ jobs:
     - stage: build
       name: "Publish the Docker image to DockerHub"
       before_script:
-        - echo "$DH_PASS" | docker login -u "$DH_USER" --password-stdin
+        - echo "$DH_PASS" | docker login -u caian --password-stdin
+      install:
+        - true
       script:
         - docker build -t $DH_REPO:$TRAVIS_TAG
         - docker push $DH_REPO:$TRAVIS_TAG
