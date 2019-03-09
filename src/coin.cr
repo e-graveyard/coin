@@ -1,5 +1,5 @@
-require "./cli"
-require "./exchanger"
+require "./coin/cli"
+require "./coin/exchanger"
 
 
 def main
