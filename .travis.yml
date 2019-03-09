@@ -37,7 +37,7 @@ jobs:
       install:
         - true
       script:
-        - docker build -t $DH_REPO:$TRAVIS_TAG
+        - docker build -t $DH_REPO:$TRAVIS_TAG .
         - docker push $DH_REPO:$TRAVIS_TAG
         - docker tag $DH_REPO:$TRAVIS_TAG $DH_REPO:latest
         - docker push $DH_REPO:latest
