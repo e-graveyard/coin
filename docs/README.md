@@ -1,3 +1,8 @@
+[![Build Status][travis-shield]][travis-url]
+
+[travis-shield]: https://travis-ci.org/caian-org/coin.svg?branch=master
+[travis-url]: https://travis-ci.org/caian-org/coin
+
 # COIN: CLI to currency conversion
 
 `coin` is a command-line application that performs currency conversion via the
