@@ -30,7 +30,7 @@ jobs:
         - docker run coin -v
       if: branch = master OR tag IS present
 
-    - stage: build
+    - stage: publish
       name: "Publish the Docker image to DockerHub"
       before_script:
         - echo "$DH_PASS" | docker login -u caian --password-stdin
