@@ -21,14 +21,12 @@ jobs:
         - make
         - make test
 
-    - stage: build
-      name: "Build the Docker image"
+    - stage: test
+      name: "Build the Docker image and test it"
       install:
-        - true # Just a hack to skip the install phase
-      script:
         - docker build -t coin .
-        - docker run coin -v
-      if: branch = master OR tag IS present
+      script:
+        - docker run -e FIXER_API_TOKEN="$FIXER_API_TOKEN" coin 1 usd brl
 
     - stage: publish
       name: "Publish the Docker image to DockerHub"
