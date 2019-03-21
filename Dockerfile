@@ -3,9 +3,9 @@ MAINTAINER Caian R. Ertl <hi@caian.org>
 
 RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories
 RUN apk update
-RUN apk add build-base libc-dev
-RUN apk add zlib-dev openssl-dev readline-dev gmp-dev yaml-dev libxml2-dev
-RUN apk add crystal shards
+RUN apk add build-base libc-dev \
+        zlib-dev openssl-dev readline-dev gmp-dev yaml-dev libxml2-dev \
+        crystal shards
 
 FROM base AS build
 COPY . /app
