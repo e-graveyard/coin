@@ -2,12 +2,16 @@
 
 C = crystal
 ARTIFACT = coin
+LFLAGS = --release
 
 shards:
 	if ! [ -d "./lib" ]; then shards install; fi
 
-build: shards
-	$(C) build src/coin.cr -o $(ARTIFACT)
+build:
+	$(C) build $(LFLAGS) src/coin.cr -o $(ARTIFACT)
+
+static: LFLAGS += --static
+static: build
 
 install:
 	mv $(ARTIFACT) /usr/bin
