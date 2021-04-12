@@ -35,7 +35,7 @@ module Exchanger
       base = to_large_int(rates[@origin])
 
       results = Array(Float64).new
-      @targets.each do |symbol|
+      @targets.each(String) do |symbol|
         target = to_large_int(rates[symbol])
         results << compute(base, target)
       end
@@ -44,10 +44,7 @@ module Exchanger
     end
 
     private def request
-      params = HTTP::Params.encode({
-        "access_key" => (@token || ""),
-      })
-
+      params = HTTP::Params.encode({"access_key" => (@token || "")})
       body = (HTTP::Client.get "#{@endpoint}?#{params}").body
       return JSON.parse(body)
     end
