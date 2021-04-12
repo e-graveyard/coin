@@ -1,7 +1,4 @@
-[![Build Status][travis-shield]][travis-url]
-
-[travis-shield]: https://travis-ci.org/caian-org/coin.svg?branch=master
-[travis-url]: https://travis-ci.org/caian-org/coin
+[![Build Status][travis-shield]][travis-url] [![GitHub tag][tag-shield]][tag-url]
 
 # COIN: CLI to currency conversion
 
@@ -14,15 +11,14 @@ up to 168 different currencies.
 ![example](docs/coin.png)
 ></p>
 
-<p align="center"
+[travis-shield]: https://img.shields.io/travis/caian-org/coin.svg?logo=travis-ci&logoColor=FFF&style=flat-square
+[travis-url]: https://travis-ci.org/caian-org/coin
 
-[![pd](https://forthebadge.com/images/badges/cc-0.svg)][ccz] [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)][ftb] [![didnt-ask](https://forthebadge.com/images/badges/you-didnt-ask-for-this.svg)][ftb]
-></p>
-
-[ccz]: http://creativecommons.org/publicdomain/zero/1.0
-[ftb]: https://forthebadge.com
+[tag-shield]: https://img.shields.io/github/tag/caian-org/coin.svg?logo=git&logoColor=FFF&style=flat-square
+[tag-url]: https://github.com/caian-org/coin/releases
 
 ---
+
 
 ## Table of Contents
 
@@ -158,8 +154,15 @@ contributor) waive it's copyrights to the Public Domain.
 
 ## License
 
-To the extent possible under law, [Caian Rais Ertl](https://github.com/caiertl)
-has waived all copyright and related or neighboring rights to this work.
+To the extent possible under law, [Caian Rais Ertl][me] has waived __all
+copyright and related or neighboring rights to this work__. In the spirit of
+_freedom of information_, I encourage you to fork, modify, change, share, or do
+whatever you like with this project! [`^C ^V`][kopimi]
 
-Coin depends on [`optarg`](https://github.com/mosop/optarg). `optarg` is
-licensed under the MIT license.
+[![License][cc-shield]][cc-url]
+
+[me]: https://github.com/caiertl
+[cc-shield]: https://forthebadge.com/images/badges/cc-0.svg
+[cc-url]: http://creativecommons.org/publicdomain/zero/1.0
+
+[kopimi]: https://kopimi.com
