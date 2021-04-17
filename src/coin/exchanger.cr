@@ -35,7 +35,7 @@ module Exchanger
       base = to_large_int(rates[@origin])
 
       results = Array(Float64).new
-      @targets.each(String) do |symbol|
+      @targets.each do |symbol|
         target = to_large_int(rates[symbol])
         results << compute(base, target)
       end
