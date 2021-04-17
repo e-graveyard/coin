@@ -1,5 +1,5 @@
-name: jp
-version: 0.1.0
+name: coin
+version: 0.2.0
 
 authors:
   - Caian R. Ertl <hi@caian.org>
@@ -8,10 +8,6 @@ targets:
   coin:
     main: src/main.cr
 
-dependencies:
-  optarg:
-    github: mosop/optarg
-
-crystal: 0.27.2
+crystal: 1.0.0
 
 license: CC0 1.0 (Public Domain Dedication)

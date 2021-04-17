@@ -1,21 +1,7 @@
 require "colorize"
-require "optarg"
 require "./currency"
 
-VERSION = "v0.1.0"
-
-class OptionalArgumentsModel < Optarg::Model
-  bool "-h"
-  bool "--help"
-  bool "-v"
-  bool "--version"
-end
-
-class PositionalArgumentsModel < Optarg::Model
-  arg "amount"
-  arg "origin"
-  arg_array "targets"
-end
+VERSION = "v0.2.0"
 
 module CLI
   class Parser
@@ -61,8 +47,20 @@ module CLI
       end
 
       if @argv.size == 1
-        parse_and_perform_optional_args
+        case @argv[0].downcase
+        when "-h", "--help"
+          help
+        when "-v", "--version"
+          version
+        else
+          raise CLI::Exception.new "unknown option"
+        end
+
         return empty
+      end
+
+      if @argv.size < 3
+        raise CLI::Exception.new "needs at least 3 positional arguments"
       end
 
       return parse_positional
@@ -72,63 +70,39 @@ module CLI
       {0, "", [] of String}
     end
 
-    private def parse_and_perform_optional_args
-      error = false
-
-      begin
-        opt = OptionalArgumentsModel.parse @argv
-        if opt.h? || opt.help?
-          help
-        elsif opt.v? || opt.version?
-          version
-        else
-          error = true
-        end
-      rescue Optarg::UnknownOption
-        error = true
-      end
-
-      if error
-        raise CLI::Exception.new "unknown option"
-      end
-    end
-
     private def parse_positional
       # expected positional arguments
       amount = Int32
       origin = String
       targets = [] of String
 
-      # ensures that no flag will be passed as an argument
-      begin
-        pos = PositionalArgumentsModel.parse @argv
-      rescue Optarg::UnknownOption
-        raise CLI::Exception.new "unknown option"
+      argv_upcased = [] of String
+
+      @argv.each do |arg|
+        # ensures that no flag will be passed as an argument
+        if arg.starts_with?("-") || arg.starts_with?("--")
+          raise CLI::Exception.new "unknown option"
+        end
+
+        # upcase all symbols
+        argv_upcased << arg.upcase
       end
 
-      # upcase all symbols
-      origin = pos.origin.upcase
-
-      pos.targets.each do |value|
-        targets << value.upcase
-      end
+      amount = argv_upcased[0]
+      origin = argv_upcased[1]
+      targets = argv_upcased[2..]
 
       # ensures that the first argument is a decimal greater then zero
       begin
-        amountf = pos.amount.to_f
+        amountf = amount.to_f
         amountf = amountf * 100
       rescue ArgumentError
-        raise CLI::Exception.new "value \"#{pos.amount}\" is not a decimal number"
+        raise CLI::Exception.new "value \"#{amount}\" is not a decimal number"
       end
 
       amount = amountf.to_i
       if amountf == 0
         raise CLI::Exception.new "cannot convert zero"
-      end
-
-      # ensures that at least one target currency is defined
-      if pos.targets.size == 0
-        raise CLI::Exception.new "at least one target currency is required for conversion"
       end
 
       # ensures that the origin and target currency symbols are valid
@@ -160,7 +134,7 @@ module CLI
     end
 
     def self.present(amount : Int32, origin : String, targets : Array(String), results : Array(Float))
-      puts "#{Style.blue "\nConversion of #{origin} #{amount / 100}.\n"}"
+      puts "#{Style.blue "\nConversion of #{origin} #{amount / 100}\n"}"
 
       max_padding = 0
       results.each do |r|

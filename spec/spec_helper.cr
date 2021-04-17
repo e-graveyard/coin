@@ -4,8 +4,7 @@ require "../src/coin/*"
 def perform_cmd?(arg : String, *argv)
   args = Array.new 1, arg
 
-  has_argv = argv.first? ? true : false
-  if has_argv
+  if argv.first?
     args.concat argv.to_a
   end
 

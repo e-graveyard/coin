@@ -2,28 +2,19 @@
 
 C = crystal
 ARTIFACT = coin
-LFLAGS = --release
-
-shards:
-	if ! [ -d "./lib" ]; then shards install; fi
+LFLAGS =
 
 build:
 	$(C) build $(LFLAGS) src/coin.cr -o $(ARTIFACT)
 
+build-release: LFLAGS += --release
+build-release: build
+
 static: LFLAGS += --static
-static: build
-
-install:
-	mv $(ARTIFACT) /usr/bin
-
-uninstall:
-	rm /usr/bin/$(ARTIFACT)
-
-run:
-	./$(ARTIFACT)
+static: build-release
 
 clean:
-	rm -f $(ARTIFACT) && rm -rf lib
+	rm -f $(ARTIFACT) && rm -rf lib *.dwarf
 
 test:
 	$(C) spec

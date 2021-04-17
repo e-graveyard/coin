@@ -9,7 +9,6 @@ def main
     if origin.empty?
       exit 0
     end
-
   rescue e : CLI::Exception
     CLI::Dialog.die "#{e.message}"
   end
