@@ -3,11 +3,11 @@
 [![Release][gh-release-shield]][gh-release-url]
 [![GitHub tag][tag-shield]][tag-url]
 
-# COIN: CLI to currency conversion
+# `coin`: currency conversion CLI
 
 <img src="docs/logo.svg" height="210px" align="right"/>
 
-`coin` is a command-line application that performs currency conversion via the
+Command-line application that performs currency conversion via the
 [Fixer API](https://fixer.io).
 
 - Able to convert monetary values up to 168 different currencies
@@ -106,7 +106,7 @@ Download the most recent version for you system, give the binary execution
 permissions and move to a directory on the `$PATH`.
 
 ```sh
-# to download the macos binary, change "coin-linux" for "coin-macos"
+# to download the macos binary, change "coin-linux" to "coin-macos"
 $ wget https://github.com/caian-org/coin/releases/download/v0.2.0/coin-linux -O coin
 $ chmod +x coin
 $ (sudo) mv coin /usr/bin
@@ -131,7 +131,7 @@ $ chmod +x coin
 $ (sudo) mv coin /usr/bin
 ```
 
-### Running in Docker
+### Running on Docker
 
 - __Pull from DockerHub:__
 
