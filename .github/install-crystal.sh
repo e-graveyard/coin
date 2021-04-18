@@ -4,7 +4,6 @@ set -e
 
 case "$OS" in
     macos-latest)
-        brew update
         brew install openssl
         export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/opt/openssl/lib/pkgconfig
 
