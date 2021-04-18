@@ -14,7 +14,7 @@ up to 168 different currencies.
 ![example](docs/coin.png)
 ></p>
 
-[crystal-shield]: https://img.shields.io/badge/Made%20with-Crystal-1f425f.svg?style=flat-square
+[crystal-shield]: https://img.shields.io/badge/Made%20with-Crystal-1f425f.svg?style=flat-square&logo=crystal&logoColor=FFF
 [crystal-url]: https://crystal-lang.org/
 
 [gh-bnt-shield]: https://img.shields.io/github/workflow/status/caian-org/coin/build-and-test?label=build%20%26%20test&logo=github&style=flat-square
