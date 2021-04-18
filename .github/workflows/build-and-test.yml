@@ -51,6 +51,16 @@ jobs:
           ./coin -h
           ./coin -v
 
+      - name: Run conversions
+        run: |
+          ./coin 1 btc usd
+          ./coin 2 xau usd eur nok rub
+          ./coin 3.333 brl jpy pyg sll vef
+          ./coin 0.04 usd aud twd nzd nad lrd kyd jmd hkd fjd
+        env:
+          FIXER_API_TOKEN: "${{ secrets.FIXER_API_TOKEN }}"
+
+
       - name: Rename artifact
         run: |
           if [ "${{ matrix.os }}" = "ubuntu-latest" ]; then
