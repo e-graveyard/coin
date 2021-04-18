@@ -1,3 +1,4 @@
+[![Made with Crystal][crystal-shield]][crystal-url]
 [![Build & Test][gh-bnt-shield]][gh-bnt-url]
 [![Release][gh-release-shield]][gh-release-url]
 [![GitHub tag][tag-shield]][tag-url]
@@ -12,6 +13,9 @@ up to 168 different currencies.
 
 ![example](docs/coin.png)
 ></p>
+
+[crystal-shield]: https://img.shields.io/badge/Made%20with-Crystal-1f425f.svg?style=flat-square
+[crystal-url]: https://crystal-lang.org/
 
 [gh-bnt-shield]: https://img.shields.io/github/workflow/status/caian-org/coin/build-and-test?label=build%20%26%20test&logo=github&style=flat-square
 [gh-bnt-url]: https://github.com/caian-org/coin/actions/workflows/build-and-test.yml
