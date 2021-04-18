@@ -28,12 +28,8 @@
 
 ## Table of Contents
 
-<p align="center"
-
-![example](docs/term.svg)
-></p>
-
 - [Usage](#usage)
+    - [Helo](#help)
     - [Fixer API token](#fixer-api-token)
 - [Installation](#installation)
     - [Pre-built](#pre-built)
@@ -44,6 +40,14 @@
 
 
 ## Usage
+
+<p align="center"
+
+![example](docs/term.svg)
+></p>
+
+
+### Help
 
 ```
 user@host:~$ coin -h
