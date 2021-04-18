@@ -16,5 +16,5 @@ static: build-release
 clean:
 	rm -f $(ARTIFACT) && rm -rf lib *.dwarf
 
-test:
+tests:
 	$(C) spec
