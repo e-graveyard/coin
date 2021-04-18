@@ -30,7 +30,7 @@
 
 <p align="center"
 
-![example](docs/coin.svg)
+![example](docs/term.svg)
 ></p>
 
 - [Usage](#usage)
