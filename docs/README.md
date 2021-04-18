@@ -1,4 +1,6 @@
-[![Build Status][travis-shield]][travis-url] [![GitHub tag][tag-shield]][tag-url]
+[![Build & Test][gh-bnt-shield]][gh-bnt-url]
+[![Release][gh-release-shield]][gh-release-url]
+[![GitHub tag][tag-shield]][tag-url]
 
 # COIN: CLI to currency conversion
 
@@ -11,8 +13,11 @@ up to 168 different currencies.
 ![example](docs/coin.png)
 ></p>
 
-[travis-shield]: https://img.shields.io/travis/caian-org/coin.svg?logo=travis-ci&logoColor=FFF&style=flat-square
-[travis-url]: https://travis-ci.org/caian-org/coin
+[gh-bnt-shield]: https://img.shields.io/github/workflow/status/caian-org/coin/build-and-test?label=build%20%26%20test&logo=github&style=flat-square
+[gh-bnt-url]: https://github.com/caian-org/coin/actions/workflows/build-and-test.yml
+
+[gh-release-shield]: https://img.shields.io/github/workflow/status/caian-org/coin/release?label=release&logo=github&style=flat-square
+[gh-release-url]: https://github.com/caian-org/coin/actions/workflows/release.yml
 
 [tag-shield]: https://img.shields.io/github/tag/caian-org/coin.svg?logo=git&logoColor=FFF&style=flat-square
 [tag-url]: https://github.com/caian-org/coin/releases
@@ -85,14 +90,15 @@ $ export FIXER_API_TOKEN="ys1r39m5zc71xpvdjpqsnrhwqtxe98cj"
 
 ### Pre-built
 
-The pre-built binary is available at the [release page](https://github.com/caian-org/coin/releases).
-Download the most recent version, give the binary execution permissions and
-move to a directory on the `$PATH`.
+The pre-built binaries are available at the [release page](https://github.com/caian-org/coin/releases).
+Download the most recent version for you system, give the binary execution
+permissions and move to a directory on the `$PATH`.
 
 ```sh
-$ wget https://github.com/caian-org/coin/releases/download/v0.1.0/coin
+# to download the macos binary, change "coin-linux" for "coin-macos"
+$ wget https://github.com/caian-org/coin/releases/download/v0.2.0/coin-linux -O coin
 $ chmod +x coin
-$ mv coin /usr/bin
+$ (sudo) mv coin /usr/bin
 ```
 
 ### From source
@@ -110,7 +116,8 @@ $ clone https://github.com/caian-org/coin
 
 ```sh
 $ make
-$ (sudo) make install
+$ chmod +x coin
+$ (sudo) mv coin /usr/bin
 ```
 
 ### Running in Docker
