@@ -8,8 +8,10 @@
 <img src="docs/logo.svg" height="210px" align="right"/>
 
 `coin` is a command-line application that performs currency conversion via the
-[Fixer API](https://fixer.io). It is currently able to convert monetary values
-up to 168 different currencies.
+[Fixer API](https://fixer.io).
+
+- Able to convert monetary values up to 168 different currencies
+- Available as a single binary, no external dependencies needed
 
 [crystal-shield]: https://img.shields.io/badge/Made%20with-Crystal-1f425f.svg?style=flat-square&logo=crystal&logoColor=FFF
 [crystal-url]: https://crystal-lang.org/
