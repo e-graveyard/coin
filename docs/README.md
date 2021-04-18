@@ -43,7 +43,7 @@
 
 <p align="center"
 
-![example](docs/term.svg)
+![example](docs/cli.svg)
 ></p>
 
 
