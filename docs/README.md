@@ -5,14 +5,11 @@
 
 # COIN: CLI to currency conversion
 
+<img src="docs/logo.svg" height="210px" align="right"/>
+
 `coin` is a command-line application that performs currency conversion via the
 [Fixer API](https://fixer.io). It is currently able to convert monetary values
 up to 168 different currencies.
-
-<p align="center"
-
-![example](docs/coin.svg)
-></p>
 
 [crystal-shield]: https://img.shields.io/badge/Made%20with-Crystal-1f425f.svg?style=flat-square&logo=crystal&logoColor=FFF
 [crystal-url]: https://crystal-lang.org/
@@ -26,10 +23,13 @@ up to 168 different currencies.
 [tag-shield]: https://img.shields.io/github/tag/caian-org/coin.svg?logo=git&logoColor=FFF&style=flat-square
 [tag-url]: https://github.com/caian-org/coin/releases
 
----
-
 
 ## Table of Contents
+
+<p align="center"
+
+![example](docs/coin.svg)
+></p>
 
 - [Usage](#usage)
     - [Fixer API token](#fixer-api-token)
