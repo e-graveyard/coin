@@ -1,0 +1,60 @@
+name: release
+
+on:
+  push:
+    tags:
+      - "v*"
+    paths-ignore:
+      - "**.md"
+
+jobs:
+  multi-os-binaries:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait for build to finish
+        uses: lewagon/wait-on-check-action@master
+        with:
+          ref: "${{ github.sha }}"
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"
+          wait-interval: 20
+          running-workflow-name: multi-os-binaries
+
+      - name: Checkout to coin
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Set artifact names
+        run: |
+          echo "::set-env name=LINUX_ARTIFACT::coin-${GITHUB_SHA}-linux"
+          echo "::set-env name=MACOS_ARTIFACT::coin-${GITHUB_SHA}-macos"
+        env:
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: "true"
+
+      - name: Download linux artifact
+        uses: dawidd6/action-download-artifact@v2
+        with:
+          name: "${{ env.LINUX_ARTIFACT }}"
+          workflow: build-many.yml
+
+      - name: Download macos artifact
+        uses: dawidd6/action-download-artifact@v2
+        with:
+          name: "${{ env.MACOS_ARTIFACT }}"
+          workflow: build-many.yml
+
+      - name: Remove SHA from artifact name
+        run: |
+          mv coin-*-linux coin-linux
+          mv coin-*-macos coin-macos
+
+      - name: Make release
+        run: |
+          curl -q -L -O "https://github.com/caian-org/vrelease/releases/download/v0.2.0/vrelease-linux"
+          chmod +x vrelease-linux
+
+          ./vrelease-linux \
+            -a coin-linux \
+            -a coin-macos
+        env:
+          VRELEASE_GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"

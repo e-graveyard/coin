@@ -1,0 +1,76 @@
+name: build-and-test
+
+on:
+  push:
+    branches:
+      - master
+    tags:
+      - "v*"
+    paths-ignore:
+      - "**.md"
+  pull_request:
+    branches:
+      - "*"
+    tags:
+      - "*"
+    paths-ignore:
+      - "**.md"
+
+jobs:
+  multi-os:
+    runs-on: ${{ matrix.os }}
+
+    defaults:
+      run:
+        shell: bash
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+
+    steps:
+      - name: Checkout to coin
+        uses: actions/checkout@v2
+
+      - name: Environment info
+        run: echo $GITHUB_SHA $GITHUB_REF
+
+      - name: Install Crystal
+        run: bash "${GITHUB_WORKSPACE}/.github/install-crystal.sh"
+        env:
+          OS: "${{ matrix.os }}"
+
+      - name: Run tests
+        run: make tests
+
+      - name: Compile coin
+        run: make build-release
+
+      - name: See info
+        run: |
+          ./coin -h
+          ./coin -v
+
+      - name: Rename artifact
+        run: |
+          if [ "${{ matrix.os }}" = "ubuntu-latest" ]; then
+            export ARTIFACT="coin-${GITHUB_SHA}-linux"
+          fi
+
+          if [ "${{ matrix.os }}" = "macos-latest" ]; then
+            export ARTIFACT="coin-${GITHUB_SHA}-macos"
+          fi
+
+          mv coin "$ARTIFACT"
+
+          ls -lash
+          echo "::set-env name=ARTIFACT::${ARTIFACT}"
+        env:
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: "true"
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: "${{ env.ARTIFACT }}"
+          path: "${{ env.ARTIFACT }}"
+          retention-days: 1
