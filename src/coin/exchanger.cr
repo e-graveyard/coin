@@ -58,10 +58,11 @@ module Exchanger
     end
 
     private def compute(base, target)
+      multiplier = 100.0
       rate = target / base
-      value = (@amount * rate) / 100
+      value = (@amount * rate) / multiplier
 
-      (value * 100).round / 100.0
+      (value * multiplier) / multiplier
     end
   end
 

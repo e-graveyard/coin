@@ -134,18 +134,19 @@ module CLI
     end
 
     def self.present(amount : Int32, origin : String, targets : Array(String), results : Array(Float))
-      puts "#{Style.blue "\nConversion of #{origin} #{amount / 100}\n"}"
+      puts "#{Style.blue "\nConversion of #{amount / 100.0} #{origin}\n"}"
 
       max_padding = 0
       results.each do |r|
-        len = "#{r}".size
+        len = "#{Style.nine_dec_places r}".size
         max_padding = len if len > max_padding
       end
 
       targets.zip(results).each do |target, result|
-        padding = max_padding - "#{result}".size
+        f = Style.nine_dec_places result
+        padding = max_padding - "#{f}".size
 
-        print " - #{Style.green result} #{" " * padding}"
+        print " - #{Style.green f} #{" " * padding}"
         print "#{Style.dim "(#{target})"} #{Currency::SYMBOLS[target]}.\n"
       end
 
@@ -172,6 +173,10 @@ module CLI
 
     def self.red(txt)
       txt.colorize(:light_red)
+    end
+
+    def self.nine_dec_places(value)
+        sprintf "%.9f", value
     end
   end
 end
