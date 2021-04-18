@@ -11,7 +11,7 @@ up to 168 different currencies.
 
 <p align="center"
 
-![example](docs/coin.png)
+![example](docs/coin.svg)
 ></p>
 
 [crystal-shield]: https://img.shields.io/badge/Made%20with-Crystal-1f425f.svg?style=flat-square&logo=crystal&logoColor=FFF
