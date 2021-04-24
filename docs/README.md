@@ -29,12 +29,7 @@ Command-line application that performs currency conversion via the
 ## Table of Contents
 
 - [Usage](#usage)
-    - [Helo](#help)
-    - [Fixer API token](#fixer-api-token)
 - [Installation](#installation)
-    - [Pre-built](#pre-built)
-    - [From source](#from-source)
-    - [Running in Docker](#running-in-docker)
 - [Contributing](#contributing)
 - [License](#license)
 
