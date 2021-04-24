@@ -5,7 +5,7 @@
 
 # `coin`: currency conversion CLI
 
-<img src="docs/logo.svg" height="210px" align="right"/>
+<img src="docs/new-01.svg" height="230px" align="right"/>
 
 Command-line application that performs currency conversion via the
 [Fixer API](https://fixer.io).
@@ -29,14 +29,8 @@ Command-line application that performs currency conversion via the
 ## Table of Contents
 
 - [Usage](#usage)
-    - [Helo](#help)
-    - [Fixer API token](#fixer-api-token)
 - [Installation](#installation)
-    - [Pre-built](#pre-built)
-    - [From source](#from-source)
-    - [Running in Docker](#running-in-docker)
 - [Contributing](#contributing)
-- [Acknowledgements](#acknowledgements)
 - [License](#license)
 
 
@@ -168,15 +162,6 @@ If you wish to contribute:
 
 Large contributions must contain a notice stating that the owner (i.e., the
 contributor) waive it's copyrights to the Public Domain.
-
-
-## Acknowledgements
-
-Icons made by [Icongeek26][icongeek] from [Flaticon][flaticon].
-
-[icongeek]: https://www.flaticon.com/authors/icongeek26
-[flaticon]: https://www.flaticon.com
-[cc3]: http://creativecommons.org/licenses/by/3.0
 
 
 ## License
