@@ -1,5 +1,5 @@
 name: coin
-version: 0.2.0
+version: 0.2.1
 
 authors:
   - Caian R. Ertl <hi@caian.org>
@@ -8,6 +8,6 @@ targets:
   coin:
     main: src/main.cr
 
-crystal: 1.0.0
+crystal: 1.2.2
 
 license: CC0 1.0 (Public Domain Dedication)
