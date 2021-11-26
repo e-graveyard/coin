@@ -5,7 +5,7 @@
 
 # `coin`: currency conversion CLI
 
-<img src="docs/new-01.svg" height="230px" align="right"/>
+<img src="docs/logo.svg" height="230px" align="right"/>
 
 Command-line application that performs currency conversion via the
 [Fixer API](https://fixer.io).
