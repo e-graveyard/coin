@@ -43,7 +43,13 @@ jobs:
       - name: Run tests
         run: make tests
 
-      - name: Compile coin
+      - name: MacOS pre-build steps
+        run: |
+          gem install bundler
+          brew install upx
+        if: ${{ matrix.os == 'macos-latest' }}
+
+      - name: Build coin
         run: make build-release
 
       - name: See info

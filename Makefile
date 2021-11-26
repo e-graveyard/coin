@@ -7,8 +7,10 @@ LFLAGS =
 build:
 	$(C) build $(LFLAGS) src/coin.cr -o $(ARTIFACT)
 
-build-release: LFLAGS += --release
+build-release: LFLAGS += --release --no-debug
 build-release: build
+	@strip $(ARTIFACT)
+	@upx --best --lzma $(ARTIFACT)
 
 static: LFLAGS += --static
 static: build-release
