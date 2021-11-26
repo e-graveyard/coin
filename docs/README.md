@@ -20,7 +20,7 @@ Command-line application that performs currency conversion via the
 [gh-bnt-url]: https://github.com/caian-org/coin/actions/workflows/build-and-test.yml
 
 [gh-release-shield]: https://img.shields.io/github/workflow/status/caian-org/coin/release?label=release&logo=github&style=flat-square
-[gh-release-url]: https://github.com/caian-org/coin/actions/workflows/release.yml
+[gh-release-url]: https://github.com/caian-org/coin/actions/workflows/release-all.yml
 
 [tag-shield]: https://img.shields.io/github/tag/caian-org/coin.svg?logo=git&logoColor=FFF&style=flat-square
 [tag-url]: https://github.com/caian-org/coin/releases
