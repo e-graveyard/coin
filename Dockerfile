@@ -3,6 +3,7 @@ MAINTAINER Caian R. Ertl <hi@caian.org>
 
 COPY . /app
 WORKDIR /app
+RUN apk update && apk add upx
 RUN make static
 
 FROM scratch AS run
