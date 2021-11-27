@@ -7,8 +7,7 @@
 
 <img src="docs/logo.svg" height="250px" align="right"/>
 
-Command-line application that performs currency conversion via the
-[Fixer API](https://fixer.io).
+CLI to perform currency conversions via the [Fixer API](https://fixer.io).
 
 - Able to convert monetary values up to 168 different currencies
 - Available as a single binary, no external dependencies needed
